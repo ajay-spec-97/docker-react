@@ -6,12 +6,13 @@ pipeline {
         }
     }
     environment {
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
         CI = 'true'
     }
     stages {
         stage('Build') {
             steps {
-                sh 'chown -R 127:133 "/.npm"'
+                sh 'npm install'
                 sh 'npm run test'
             }
         }
