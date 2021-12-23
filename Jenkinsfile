@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install -g eslint --unsafe-perm=true --allow-root'
+                sh 'sudo chown -R 127:133 "/.npm"'
                 sh 'npm run test'
             }
         }
