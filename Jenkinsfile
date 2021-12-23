@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'sudo npm install -g eslint --unsafe-perm=true --allow-root'
                 sh 'npm run test'
             }
         }
