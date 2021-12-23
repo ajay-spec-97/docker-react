@@ -10,10 +10,14 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') {
+        stage('build-run-tests') {
             steps {
                 sh 'npm install'
                 sh 'npm run test'
+            }
+        stage('app-deploy-run') {
+            steps {
+                sh 'npm run start'
             }
         }
     }
