@@ -1,0 +1,9 @@
+sudo: required
+services:
+   - docker
+
+before_install:
+   - docker build -t ajay/docker-react -f Doeckerfile.dev .
+
+script:
+   - docker run -e CI=true ajay/docker-react npm run test
