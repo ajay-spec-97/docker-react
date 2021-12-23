@@ -15,11 +15,11 @@ pipeline {
                 sh 'npm install'
                 sh 'npm run test'
             }
-        stage('app-deploy-run') {
+        }
+        stage('app-run-deploy') {
             steps {
                 sh 'npm run start'
             }
-         }
-     }
-   }
- }
+        }
+    }
+}
